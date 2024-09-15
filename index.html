@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALMAPAN Panadería y Pastelería</title>
+  <style>
+    /* Color de fondo global para todo el sitio, excepto el nav */
+    body {
+        background-image: url("/assets/img/logo-almapan.jpeg");
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        background-position: 0 0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Mantener el fondo blanco en el nav */
+    .navbar {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid red;
+    }
+    
+    .navbar-logo h1 {
+        color: red;
+        font-size: 24px;
+    }
+    
+    .navbar-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+    }
+    
+    .navbar-links li {
+        margin-left: 20px;
+    }
+    
+    .navbar-links a {
+        text-decoration: none;
+        color: red;
+        font-weight: bold;
+    }
+    
+    .navbar-links a:hover {
+        color: white;
+        background-color: red;
+        padding: 5px;
+    }
+
+    /* Estilo para los carruseles con bordes rojos */
+    .carousel {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        overflow: hidden;
+        border: 4px solid red; /* Bordes rojos */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+    }
+
+    .carousel img {
+        width: 100%;
+        display: block;
+    }
+
+    /* Botones de navegación del carrusel */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 24px;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Estilo para la sección de ubicación */
+    #ubicacion {
+        padding: 20px;
+        text-align: center;
+        background-color: white; /* Fondo blanco para el bloque */
+        border: 1px solid #ccc; /* Borde gris */
+        max-width: 800px;
+        margin: 0 auto; /* Centrar en la página */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la sección */
+    }
+
+    #ubicacion h2 {
+        color: red;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .map-container {
+        position: relative;
+        padding: 20px;
+        background-color: #f7f7f7; /* Fondo para destacar el mapa */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor del mapa */
+        text-align: center;
+    }
+
+    .map-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .btn-maps {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .btn-maps:hover {
+        background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menú de navegación -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <h1>ALMAPAN Panadería y Pastelería</h1>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Primer Carrusel de sucursales con bordes rojos -->
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="assets/img/almapan1.jpeg" alt="sucursal 1"> 
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/img/almapan2.jpeg" alt="sucursal 2"> 
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/img/almapan3.jpeg" alt="sucursal 3"> 
+      </div>
+    </div>
+    <!-- Botones de navegación para el primer carrusel -->
+    <button class="prev" onclick="moveSlide(-1, 1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1, 1)">&#10095;</button>
+  </div>
+
+  <!-- Segundo Carrusel de ofertas con bordes rojos -->
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="assets/img/muestra4.jpeg" alt="Oferta 1"> 
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/img/muestra1.jpeg" alt="Oferta 2"> 
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/img/muestra3.jpeg" alt="Oferta 3"> 
+      </div>
+    </div>
+    <!-- Botones de navegación para el segundo carrusel -->
+    <button class="prev" onclick="moveSlide(-1, 2)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1, 2)">&#10095;</button>
+  </div>
+
+  <!-- Sección de Ubicación -->
+  <section id="ubicacion">
+    <h2>Ubicación de nuestra sucursal</h2>
+    <div class="map-container">
+      <img src="assets/img/direccion1.png" alt="Mapa de ubicación de la sucursal"> 
+      <a href="https://www.google.com/maps/place/ALMA+PAN+Panader%C3%ADa+Y+Pasteler%C3%ADa/@-41.4803508,-72.9799215,19z/data=!3m1!4b1!4m6!3m5!1s0x96183b0073fc7c69:0x6b286e1274aed0d7!8m2!3d-41.4803518!4d-72.9792778!16s%2Fg%2F11wbw8lxhc?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <button class="btn-maps">Ver en Google Maps</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Script para los carruseles -->
+  <script>
+    let currentSlide1 = 0;
+    let currentSlide2 = 0;
+    
+    // Función para cambiar de diapositiva en el carrusel correcto
+    function moveSlide(direction, carouselNumber) {
+      const container = document.querySelectorAll('.carousel-container')[carouselNumber - 1];
+      let slides;
+      if (carouselNumber === 1) {
+        currentSlide1 = (currentSlide1 + direction + container.children.length) % container.children.length;
+        slides = currentSlide1;
+      } else {
+        currentSlide2 = (currentSlide2 + direction + container.children.length) % container.children.length;
+        slides = currentSlide2;
+      }
+      container.style.transform = `translateX(-${slides * 100}%)`;
+    }
+  </script>
+
+</body>
+</html>

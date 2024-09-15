@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - ALMAPAN</title>
+  <style>
+    /* Color de fondo global para todo el sitio, excepto el nav */
+    body {
+        background-image: url("/assets/img/logo-almapan.jpeg");
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        background-position: 0 0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Mantener el fondo blanco en el nav */
+    .navbar {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid red;
+    }
+
+    .navbar-logo h1 {
+        color: red;
+        font-size: 24px;
+    }
+
+    .navbar-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-links li {
+        margin-left: 20px;
+    }
+
+    .navbar-links a {
+        text-decoration: none;
+        color: red;
+        font-weight: bold;
+    }
+
+    .navbar-links a:hover {
+        color: white;
+        background-color: red;
+        padding: 5px;
+    }
+
+    /* Sección de contacto con borde rojo */
+    #contacto-redes {
+        padding: 20px;
+        text-align: center;
+        background-color: white; /* Fondo blanco */
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 30px auto; /* Centrar la sección */
+        border: 2px solid red; /* Borde rojo */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    }
+
+    #contacto-redes h2 {
+        color: red;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .social-buttons {
+        display: flex;
+        flex-direction: column; /* Alinear los botones en columna */
+        gap: 10px; /* Espacio entre los botones */
+    }
+
+    .social-buttons a {
+        text-decoration: none;
+    }
+
+    .social-buttons button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Estilos específicos de cada botón */
+    .btn-whatsapp {
+        background-color: #25D366; /* Verde WhatsApp */
+    }
+
+    .btn-instagram {
+        background-color: #E1306C; /* Color Instagram */
+    }
+
+    .btn-tiktok {
+        background-color: #000000; /* Color TikTok */
+    }
+
+    .btn-gmail {
+        background-color: #D44638; /* Color Gmail */
+    }
+
+    /* Hover para todos los botones */
+    .social-buttons button:hover {
+        opacity: 0.9;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Menú de navegación -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <h1>ALMAPAN Panadería y Pastelería</h1>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#ofertas">Ofertas</a></li>
+      <li><a href="index.html#productos">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de Contacto con redes sociales -->
+  <section id="contacto-redes">
+    <h2>Contáctanos a través de nuestras redes</h2>
+    <div class="social-buttons">
+      <a href="https://wa.me/+56949644127" target="_blank">
+        <button class="btn-whatsapp">WhatsApp</button>
+      </a>
+      <a href="https://instagram.com/tu-usuario-instagram" target="_blank">
+        <button class="btn-instagram">Instagram</button>
+      </a>
+      <a href="https://www.tiktok.com/@tu-usuario-tiktok" target="_blank">
+        <button class="btn-tiktok">TikTok</button>
+      </a>
+      <a href="mailto:almapan2011@gmail.com">
+        <button class="btn-gmail">Gmail</button>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
