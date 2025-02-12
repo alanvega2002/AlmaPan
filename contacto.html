@@ -1,120 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - ALMAPAN</title>
   <style>
-    /* Color de fondo global para todo el sitio, excepto el nav */
+    /* Estilos globales para el cuerpo del documento */
     body {
-        background-image: url("assets/img/direccion1.png");
-        background-repeat: repeat;
-        background-size: 200px 200px;
-        background-position: 0 0;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+        background-image: url("assets/img/logoOscuro.png"); /* Fondo con imagen de logo */
+        background-repeat: repeat; /* Repetir la imagen de fondo */
+        background-size: 200px 200px; /* Tamaño de la imagen de fondo */
+        background-position: 0 0; /* Posición inicial de la imagen de fondo */
+        font-family: Arial, sans-serif; /* Fuente predeterminada */
+        margin: 0; /* Eliminar márgenes */
+        padding: 0; /* Eliminar relleno */
     }
 
-    /* Mantener el fondo blanco en el nav */
+    /* Estilos para la barra de navegación */
     .navbar {
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        border-bottom: 2px solid red;
-    }
-
-    .navbar-logo h1 {
-        color: red;
-        font-size: 24px;
-    }
-
-    .navbar-links {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-links li {
-        margin-left: 20px;
-    }
-
-    .navbar-links a {
-        text-decoration: none;
-        color: red;
-        font-weight: bold;
-    }
-
-    .navbar-links a:hover {
-        color: white;
-        background-color: red;
-        padding: 5px;
-    }
-
-    /* Sección de contacto con borde rojo */
-    #contacto-redes {
-        padding: 20px;
-        text-align: center;
         background-color: white; /* Fondo blanco */
-        border-radius: 10px;
-        max-width: 600px;
+        display: flex; /* Usar flexbox para alinear elementos */
+        justify-content: space-between; /* Espacio entre elementos */
+        align-items: center; /* Centrar verticalmente */
+        padding: 10px 20px; /* Relleno interno */
+        border-bottom: 2px solid red; /* Borde inferior rojo */
+    }
+
+    /* Estilos para el logo en la barra de navegación */
+    .navbar-logo h1 {
+        color: red; /* Color del texto */
+        font-size: 24px; /* Tamaño de la fuente */
+    }
+
+    /* Estilos para la lista de enlaces en la barra de navegación */
+    .navbar-links {
+        list-style: none; /* Eliminar viñetas de la lista */
+        display: flex; /* Usar flexbox para alinear elementos */
+        margin: 0; /* Eliminar márgenes */
+        padding: 0; /* Eliminar relleno */
+    }
+
+    /* Estilos para cada elemento de la lista de enlaces */
+    .navbar-links li {
+        margin-left: 20px; /* Margen izquierdo entre elementos */
+    }
+
+    /* Estilos para los enlaces en la barra de navegación */
+    .navbar-links a {
+        text-decoration: none; /* Eliminar subrayado */
+        color: red; /* Color del texto */
+        font-weight: bold; /* Texto en negrita */
+    }
+
+    /* Efecto hover para los enlaces */
+    .navbar-links a:hover {
+        color: white; /* Cambiar color del texto */
+        background-color: red; /* Cambiar color de fondo */
+        padding: 5px; /* Añadir relleno */
+    }
+
+    /* Estilos para la sección de contacto y redes sociales */
+    #contacto-redes {
+        padding: 20px; /* Relleno interno */
+        text-align: center; /* Centrar texto */
+        background-color: white; /* Fondo blanco */
+        border-radius: 10px; /* Bordes redondeados */
+        max-width: 600px; /* Ancho máximo */
         margin: 30px auto; /* Centrar la sección */
         border: 2px solid red; /* Borde rojo */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
     }
 
+    /* Estilos para el título de la sección de contacto */
     #contacto-redes h2 {
-        color: red;
-        font-size: 24px;
-        margin-bottom: 20px;
+        color: red; /* Color del texto */
+        font-size: 24px; /* Tamaño de la fuente */
+        margin-bottom: 20px; /* Margen inferior */
     }
 
+    /* Estilos para los botones de redes sociales */
     .social-buttons {
-        display: flex;
+        display: flex; /* Usar flexbox para alinear elementos */
         flex-direction: column; /* Alinear los botones en columna */
         gap: 10px; /* Espacio entre los botones */
     }
 
+    /* Estilos para los enlaces de los botones de redes sociales */
     .social-buttons a {
-        text-decoration: none;
+        text-decoration: none; /* Eliminar subrayado */
     }
 
+    /* Estilos para los botones de redes sociales */
     .social-buttons button {
-        width: 100%;
-        padding: 15px;
-        border: none;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
+        width: 100%; /* Ancho completo */
+        padding: 15px; /* Relleno interno */
+        border: none; /* Eliminar borde */
+        font-size: 18px; /* Tamaño de la fuente */
+        font-weight: bold; /* Texto en negrita */
+        color: white; /* Color del texto */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cambiar cursor al pasar el ratón */
+        transition: background-color 0.3s ease; /* Transición suave */
     }
 
-    /* Estilos específicos de cada botón */
+    /* Estilos específicos para el botón de WhatsApp */
     .btn-whatsapp {
         background-color: #25D366; /* Verde WhatsApp */
     }
 
+    /* Estilos específicos para el botón de Instagram */
     .btn-instagram {
         background-color: #E1306C; /* Color Instagram */
     }
 
+    /* Estilos específicos para el botón de TikTok */
     .btn-tiktok {
         background-color: #000000; /* Color TikTok */
     }
 
+    /* Estilos específicos para el botón de Gmail */
     .btn-gmail {
         background-color: #D44638; /* Color Gmail */
     }
 
-    /* Hover para todos los botones */
+    /* Efecto hover para todos los botones */
     .social-buttons button:hover {
-        opacity: 0.9;
+        opacity: 0.9; /* Reducir opacidad */
     }
 
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+        margin-top: 20px; /* Margen superior */
+    }
+
+    /* Estilos para los campos de entrada del formulario */
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+        width: 100%; /* Ancho completo */
+        padding: 10px; /* Relleno interno */
+        margin-bottom: 15px; /* Margen inferior */
+        border: 1px solid #ccc; /* Borde gris */
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 16px; /* Tamaño de la fuente */
+    }
+
+    /* Estilos específicos para el área de texto del formulario */
+    .formulario-contacto textarea {
+        resize: vertical; /* Permitir redimensionar verticalmente */
+        height: 150px; /* Altura inicial */
+    }
+
+    /* Estilos para el botón de enviar del formulario */
+    .formulario-contacto button {
+        background-color: red; /* Fondo rojo */
+        color: white; /* Color del texto */
+        padding: 10px 20px; /* Relleno interno */
+        border: none; /* Eliminar borde */
+        cursor: pointer; /* Cambiar cursor al pasar el ratón */
+        font-size: 16px; /* Tamaño de la fuente */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    /* Efecto hover para el botón de enviar */
+    .formulario-contacto button:hover {
+        background-color: darkred; /* Cambiar color de fondo */
+    }
+
+    /* Estilos para la sección del mapa de Google Maps */
+    .mapa-ubicacion {
+        margin-top: 30px; /* Margen superior */
+    }
+
+    /* Estilos para el iframe del mapa de Google Maps */
+    .mapa-ubicacion iframe {
+        width: 100%; /* Ancho completo */
+        height: 300px; /* Altura fija */
+        border: none; /* Eliminar borde */
+        border-radius: 10px; /* Bordes redondeados */
+    }
   </style>
 </head>
 <body>
@@ -126,7 +190,6 @@
     </div>
     <ul class="navbar-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="index.html#ofertas">Ofertas</a></li>
       <li><a href="index.html#productos">Productos</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
@@ -148,6 +211,23 @@
       <a href="mailto:almapan2011@gmail.com">
         <button class="btn-gmail">Gmail</button>
       </a>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="formulario-contacto">
+      <h2>Envíanos un mensaje</h2>
+      <form action="#" method="post">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+
+    <!-- Mapa de Google Maps -->
+    <div class="mapa-ubicacion">
+      <h2>Nuestra ubicación</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-72.9805506!3d-41.4803518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b286e1274aed0d7!2sALMA%20PAN%20Panader%C3%ADa%20Y%20Pasteler%C3%ADa!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl" allowfullscreen></iframe>
     </div>
   </section>
 

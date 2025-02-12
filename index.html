@@ -1,158 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALMAPAN Panadería y Pastelería</title>
   <style>
-    /* Color de fondo global para todo el sitio, excepto el nav */
+    /* Estilos globales para el cuerpo del documento */
     body {
-        background-image: url("assets/img/logo-almapan.jpeg");
-        background-repeat: repeat;
-        background-size: 200px 200px;
-        background-position: 0 0;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+        background-image: url("assets/img/logoOscuro.png"); /* Fondo con imagen de logo */
+        font-family: Arial, sans-serif; /* Fuente predeterminada */
+        margin: 0; /* Eliminar márgenes */
+        padding: 0; /* Eliminar relleno */
     }
     
-    /* Mantener el fondo blanco en el nav */
+    /* Estilos para la barra de navegación */
     .navbar {
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        border-bottom: 2px solid red;
+        background-color: #393939; /* Fondo gris oscuro */
+        display: flex; /* Usar flexbox para alinear elementos */
+        justify-content: space-between; /* Espacio entre elementos */
+        align-items: center; /* Centrar verticalmente */
+        padding: 10px 20px; /* Relleno interno */
+        border-bottom: 4px solid red; /* Borde inferior rojo */
     }
-    
+
+    /* Estilos para el logo en la barra de navegación */
     .navbar-logo h1 {
-        color: red;
-        font-size: 24px;
+        color: red; /* Color del texto */
+        font-size: 24px; /* Tamaño de la fuente */
     }
-    
+
+    /* Estilos para la imagen del logo */
+    .navbar-logo img {
+        width: 100px; /* Ancho de la imagen */
+        height: auto; /* Mantener la proporción de la imagen */
+    }
+
+    /* Estilos para la lista de enlaces en la barra de navegación */
     .navbar-links {
-        list-style: none;
-        display: flex;
-        margin: 0;
+        list-style: none; /* Eliminar viñetas de la lista */
+        display: flex; /* Usar flexbox para alinear elementos */
+        margin: 0; /* Eliminar márgenes */
+        padding: 0; /* Eliminar relleno */
     }
-    
+
+    /* Estilos para cada elemento de la lista de enlaces */
     .navbar-links li {
-        margin-left: 20px;
+        margin-left: 20px; /* Margen izquierdo entre elementos */
     }
-    
+
+    /* Estilos para los enlaces en la barra de navegación */
     .navbar-links a {
-        text-decoration: none;
-        color: red;
-        font-weight: bold;
+        text-decoration: none; /* Eliminar subrayado */
+        color: red; /* Color del texto */
+        font-weight: bold; /* Texto en negrita */
     }
-    
+
+    /* Efecto hover para los enlaces */
     .navbar-links a:hover {
-        color: white;
-        background-color: red;
-        padding: 5px;
+        color: white; /* Cambiar color del texto */
+        background-color: red; /* Cambiar color de fondo */
+        padding: 5px; /* Añadir relleno */
     }
 
-    /* Estilo para los carruseles con bordes rojos */
-    .carousel {
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        margin: 20px auto;
-        overflow: hidden;
-        border: 4px solid red; /* Bordes rojos */
-        border-radius: 10px; /* Bordes redondeados */
-    }
-
-    .carousel-container {
+    /* Contenedor de sucursales */
+    .sucursales-container {
         display: flex;
-        transition: transform 0.5s ease-in-out;
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center; /* Centrar horizontalmente */
+        gap: 20px; /* Espacio entre elementos */
+        padding: 20px; /* Relleno interno */
     }
 
-    .carousel-slide {
-        min-width: 100%;
-    }
-
-    .carousel img {
-        width: 100%;
-        display: block;
-    }
-
-    /* Botones de navegación del carrusel */
-    .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-size: 24px;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
-
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Estilo para la sección de ubicación */
-    #ubicacion {
-        padding: 20px;
-        text-align: center;
-        background-color: white; /* Fondo blanco para el bloque */
+    /* Estilos para cada sucursal */
+    .sucursal {
+        text-align: center; /* Centrar texto */
+        background-color: white; /* Fondo blanco */
         border: 1px solid #ccc; /* Borde gris */
-        max-width: 800px;
-        margin: 0 auto; /* Centrar en la página */
         border-radius: 10px; /* Bordes redondeados */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la sección */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+        padding: 20px; /* Relleno interno */
+        max-width: 600px; /* Ancho máximo */
+        width: 100%; /* Ocupar todo el ancho disponible */
     }
 
-    #ubicacion h2 {
-        color: red;
-        font-size: 24px;
-        margin-bottom: 20px;
+    /* Estilos para los mapas interactivos */
+    .sucursal iframe {
+        width: 100%; /* Ancho completo */
+        height: 200px; /* Altura fija */
+        border: none; /* Eliminar borde */
+        border-radius: 10px; /* Bordes redondeados */
+        margin-bottom: 15px; /* Margen inferior */
     }
 
-    .map-container {
-        position: relative;
-        padding: 20px;
-        background-color: #f7f7f7; /* Fondo para destacar el mapa */
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor del mapa */
-        text-align: center;
+    /* Estilos para la imagen de la Sucursal 3 */
+    .sucursal img {
+        width: 100%; /* Ancho completo */
+        height: auto; /* Mantener la proporción de la imagen */
+        border-radius: 10px; /* Bordes redondeados */
+        margin-bottom: 15px; /* Margen inferior */
     }
 
-    .map-container img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
+    /* Estilos para el botón de Google Maps */
     .btn-maps {
-        background-color: red;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 10px;
-        border-radius: 5px;
+        background-color: red; /* Fondo rojo */
+        color: white; /* Color del texto */
+        padding: 10px 20px; /* Relleno interno */
+        border: none; /* Eliminar borde */
+        cursor: pointer; /* Cambiar cursor al pasar el ratón */
+        font-size: 16px; /* Tamaño de la fuente */
+        margin-top: 10px; /* Margen superior */
+        border-radius: 5px; /* Bordes redondeados */
     }
 
+    /* Efecto hover para el botón de Google Maps */
     .btn-maps:hover {
-        background-color: darkred;
+        background-color: darkred; /* Cambiar color de fondo */
+    }
+
+    /* Estilos para el footer */
+    footer {
+        padding: 10px; /* Relleno interno */
+        text-align: center; /* Centrar texto */
+    }
+
+    /* Estilos para el texto del footer */
+    footer p {
+        color: white; /* Color del texto */
+        margin: 0; /* Eliminar margen predeterminado */
     }
   </style>
 </head>
 <body>
+
   <!-- Menú de navegación -->
   <nav class="navbar">
     <div class="navbar-logo">
@@ -160,78 +140,55 @@
     </div>
     <ul class="navbar-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="#ofertas">Ofertas</a></li>
       <li><a href="#productos">Productos</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
 
-  <!-- Primer Carrusel de sucursales con bordes rojos -->
-  <div class="carousel">
-    <div class="carousel-container">
-      <div class="carousel-slide">
-        <img src="assets/img/almapan1.jpeg" alt="sucursal 1"> 
-      </div>
-      <div class="carousel-slide">
-        <img src="assets/img/almapan2.jpeg" alt="sucursal 2"> 
-      </div>
-      <div class="carousel-slide">
-        <img src="assets/img/almapan3.jpeg" alt="sucursal 3"> 
-      </div>
+  <!-- Contenedor de Sucursales -->
+  <section class="sucursales-container">
+    <!-- Sucursal 1 -->
+    <div class="sucursal">
+      <h2>Sucursal Los Notros</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-72.9805506!3d-41.4803518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b286e1274aed0d7!2sALMA%20PAN%20Panader%C3%ADa%20Y%20Pasteler%C3%ADa!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <a href="https://www.google.cl/maps/place/ALMA+PAN+Panader%C3%ADa+Y+Pasteler%C3%ADa/@-41.4803518,-72.9805506,18z/data=!3m1!4b1!4m6!3m5!1s0x96183b0073fc7c69:0x6b286e1274aed0d7!8m2!3d-41.4803518!4d-72.9792778!16s%2Fg%2F11wbw8lxhc?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <button class="btn-maps">Ver en Google Maps</button>
+      </a>
     </div>
-    <!-- Botones de navegación para el primer carrusel -->
-    <button class="prev" onclick="moveSlide(-1, 1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1, 1)">&#10095;</button>
-  </div>
 
-  <!-- Segundo Carrusel de ofertas con bordes rojos -->
-  <div class="carousel">
-    <div class="carousel-container">
-      <div class="carousel-slide">
-        <img src="assets/img/muestra4.jpeg" alt="Oferta 1"> 
-      </div>
-      <div class="carousel-slide">
-        <img src="assets/img/muestra1.jpeg" alt="Oferta 2"> 
-      </div>
-      <div class="carousel-slide">
-        <img src="assets/img/muestra3.jpeg" alt="Oferta 3"> 
-      </div>
+    <!-- Sucursal 2 -->
+    <div class="sucursal">
+      <h2>Sucursal Magallanes</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-72.9495446!3d-41.4579039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96183b0305b21351%3A0x3b6e409f45fa18ec!2sJose%20Miguel%20Carrera%20437%2C%205500530%20Puerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <a href="https://www.google.cl/maps/place/Jose+Miguel+Carrera+437,+5500530+Puerto+Montt,+Los+Lagos/@-41.4579039,-72.9495446,21z/data=!4m6!3m5!1s0x96183b0305b21351:0x3b6e409f45fa18ec!8m2!3d-41.4580122!4d-72.9495861!16s%2Fg%2F11wb2rcgjn?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <button class="btn-maps">Ver en Google Maps</button>
+      </a>
     </div>
-    <!-- Botones de navegación para el segundo carrusel -->
-    <button class="prev" onclick="moveSlide(-1, 2)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1, 2)">&#10095;</button>
-  </div>
 
-  <!-- Sección de Ubicación -->
-  <section id="ubicacion">
-    <h2>Ubicación de nuestra sucursal</h2>
-    <div class="map-container">
-      <img src="assets/img/direccion1.png" alt="Mapa de ubicación de la sucursal"> 
-      <a href="https://www.google.com/maps/place/ALMA+PAN+Panader%C3%ADa+Y+Pasteler%C3%ADa/@-41.4803508,-72.9799215,19z/data=!3m1!4b1!4m6!3m5!1s0x96183b0073fc7c69:0x6b286e1274aed0d7!8m2!3d-41.4803518!4d-72.9792778!16s%2Fg%2F11wbw8lxhc?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+    <!-- Sucursal 3 -->
+    <div class="sucursal">
+      <img src="assets/img/Proximamente.png" alt="Sucursal 3">
+      <h2>Próximamente</h2>
+      <a href="https://www.google.com/maps/place/ALMAPAN+Sur/" target="_blank">
         <button class="btn-maps">Ver en Google Maps</button>
       </a>
     </div>
   </section>
 
-  <!-- Script para los carruseles -->
-  <script>
-    let currentSlide1 = 0;
-    let currentSlide2 = 0;
-    
-    // Función para cambiar de diapositiva en el carrusel correcto
-    function moveSlide(direction, carouselNumber) {
-      const container = document.querySelectorAll('.carousel-container')[carouselNumber - 1];
-      let slides;
-      if (carouselNumber === 1) {
-        currentSlide1 = (currentSlide1 + direction + container.children.length) % container.children.length;
-        slides = currentSlide1;
-      } else {
-        currentSlide2 = (currentSlide2 + direction + container.children.length) % container.children.length;
-        slides = currentSlide2;
-      }
-      container.style.transform = `translateX(-${slides * 100}%)`;
-    }
-  </script>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ALMAPAN. Todos los derechos reservados.</p>
+  </footer>
 
 </body>
 </html>
